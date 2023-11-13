@@ -27,7 +27,7 @@ int print_HEX(va_list v)
 		array[i] = temp_num % 16;
 		temp_num = temp_num / 16;
 	}
-	for (i = count - 1; i >= 0; i++)
+	for (i = count - 1; i >= 0; i--)
 	{
 		if (array[i] > 9)
 		{
