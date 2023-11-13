@@ -11,6 +11,7 @@ int _strlen(char *str)
 	int i;
 
 	for (i = 0; str[i] != 0; i++)
+		;
 	return (i);
 }
 
@@ -26,5 +27,6 @@ int _strlen_const(const char *str)
 	int i;
 
 	for (i = 0; str[i] != 0; i++)
+		;
 	return (i);
 }

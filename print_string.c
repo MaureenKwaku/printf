@@ -14,9 +14,9 @@ int print_string(va_list v)
 	str = va_arg(v, char *);
 	if (str == NULL)
 	{
-		str == "(null)";
+		str = "(null)";
 		length = _strlen(str);
-		for (i = 0, i < length; i++)
+		for (i = 0; i < length; i++)
 		{
 			_putchar(str[i]);
 		}

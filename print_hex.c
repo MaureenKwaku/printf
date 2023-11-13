@@ -9,6 +9,7 @@
 int print_hex(va_list v)
 {
 	int i = 0;
+	int *array;
 	int count = 0;
 	unsigned int num = va_arg(v, unsigned int);
 	unsigned int temp_num = num;
@@ -35,5 +36,5 @@ int print_hex(va_list v)
 		_putchar(array[i] + '0');
 	}
 	free(array);
-	return (counter);
+	return (count);
 }

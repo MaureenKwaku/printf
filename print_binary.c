@@ -6,7 +6,7 @@
  * Return: 1 or 0
 **/
 
-int print_binary(var_list v)
+int print_binary(va_list v)
 {
 	int track = 0;
 	int bit_count = 0;

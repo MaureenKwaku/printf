@@ -33,7 +33,7 @@ int print_int(va_list args)
 		num = n;
 		while (exp > 0)
 		{
-			digi = num / exp;
+			digit = num / exp;
 			_putchar(digit + '0');
 			num = num - (digit * exp);
 			exp = exp / 10;
