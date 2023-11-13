@@ -22,10 +22,7 @@ int print_octal(va_list v)
 	count++;
 
 	array = malloc(sizeof(int) * count);
-	if (array == NULL)
-	{
-		return (NULL);
-	}
+
 	for (i = 0; i < count; i++)
 	{
 		array[i] = temp_num % 8;

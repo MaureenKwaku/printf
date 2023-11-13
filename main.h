@@ -7,6 +7,18 @@
 #include <unistd.h>
 #include <limits.h>
 
+/**
+ * struct format - converter for printf
+ * @ph: type char pointer to be checked
+ * @function: function for the conversion specifier
+ */
+
+typedef struct format
+{
+	char *ph;
+	int (*function)();
+}  convert;
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list v);
