@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_string- prints out a string.
- * @str: a parameter to be checked
+ * @args: a parameter to be checked
  * Return: the length of the string
 **/
 
