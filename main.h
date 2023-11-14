@@ -21,8 +21,8 @@ typedef struct format
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_char(va_list v);
-int print_string(va_list v);
+int print_char(int c);
+int print_string(char *str);
 int _strlen(char *str);
 int _strlen_const(const char *str);
 int print_percent(void);
@@ -33,5 +33,6 @@ int print_unsigned(va_list args);
 int print_octal(va_list v);
 int print_hex(va_list v);
 int print_HEX(va_list v);
+int print_unknown(va_list v);
 
 #endif

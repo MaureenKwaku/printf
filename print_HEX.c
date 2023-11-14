@@ -20,7 +20,7 @@ int print_HEX(va_list v)
 		count++;
 	}
 	count++;
-	array = malloc(sizeof(int) * count);
+	array = malloc(count * sizeof(int));
 
 	for (i = 0; i < count; i++)
 	{
