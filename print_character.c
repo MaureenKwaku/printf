@@ -2,15 +2,12 @@
 
 /**
  * print_char - prints out a char
- * @v: a parameter to be checked
+ * @c: a parameter to be checked
  * Return: 1
 **/
 
-int print_char(va_list v)
+int print_char(int c)
 {
-	char str;
-
-	str = va_arg(v, int);
-	_putchar(str);
+	_putchar(c);
 	return (1);
 }
