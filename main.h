@@ -16,16 +16,16 @@
 typedef struct format
 {
 	char *ph;
-	int (*function)();
+	int (*function)(va_list args);
 }  convert;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_char(int c);
-int print_string(char *str);
+int print_char(va_list args);
+int print_string(va_list args);
 int _strlen(char *str);
 int _strlen_const(const char *str);
-int print_percent(void);
+int print_percent(va_list args);
 int print_int(va_list args);
 int print_decimal(va_list args);
 int print_binary(va_list v);
@@ -34,5 +34,6 @@ int print_octal(va_list v);
 int print_hex(va_list v);
 int print_HEX(va_list v);
 int print_unknown(va_list v);
+int handle_conversion(char specifier, va_list args);
 
 #endif

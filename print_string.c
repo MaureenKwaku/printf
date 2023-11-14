@@ -5,8 +5,9 @@
  * Return: the length of the string
 **/
 
-int print_string(char *str)
+int print_string(va_list args)
 {
+	char *str = va_arg(args, char *);
 	int length = 0;
 
 	if (str == NULL)

@@ -1,50 +1,60 @@
 #include "main.h"
 
 /**
- * _printf - a function to print out to the standard output
+ * _printf - print out to the standard output
  * @format: a parameter to be checked
- * Return: length
+ * Return: The number of characters printed
 **/
 
 int _printf(const char *format, ...)
 {
-	convert p[] = {
-		{"%s", print_string}, {"%c", print_char},
-		{"%%", print_percent},
-		{"%i", print_int}, {"%d", print_decimal},
-		{"%b", print_binary},
-		{"%u", print_unsigned},
-		{"%o", print_octal}, {"%x", print_hex}, {"%X", print_HEX},
-		{"%S", print_string}
-	};
-
 	va_list args;
-	int i = 0;
-	int j = 0;
 	int length = 0;
 
 	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+
+	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-Here:
-	while (format[i] != '\0')
+	while (*format)
 	{
-		j = 13;
-		while (j >= 0)
+		if (*format == '%' && format[1] != '\0')
 		{
-			if (p[j].ph[0] == format[i] && p[j].ph[1] == format[i + 1])
-			{
-				length += p[j].function(args);
-				i = i + 2;
-				goto Here;
-			}
-			j--;
+			format++;
+			length += handle_conversion(*format, args);
 		}
-		_putchar(format[i]);
-		length++;
-		i++;
+		else
+		{
+			_putchar(*format);
+			length++;
+		}
+		format++;
 	}
 	va_end(args);
 	return (length);
 }
+
+/**
+ * handle_conversion - handle specific conversions
+ * @specifier: a parameter to be checked
+ * @args: a parameter to be checked
+ * Return: The number of characters printed for this conversion
+**/
+
+int handle_conversion(char specifier, va_list args)
+{
+	switch (specifier)
+	{
+		case 'c': return print_char(args);
+		case 's': return print_string(args);
+		case '%': return print_percent(args);
+		case 'd': return print_decimal(args);
+		case 'i': return print_int(args);
+
+		default:
+		_putchar('%');
+		_putchar(specifier);
+		return (2);
+	}
+}
+
