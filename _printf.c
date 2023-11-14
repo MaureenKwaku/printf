@@ -10,12 +10,11 @@ int _printf(const char *format, ...)
 {
 	convert p[] = {
 		{"%s", print_string}, {"%c", print_char},
-		{"%%", print_percent},
-		{"%i", print_int}, {"%d", print_decimal},
-		{"%b", print_binary},
-		{"%u", print_unsigned},
-		{"%o", print_octal}, {"%x", print_hex}, {"%X", print_HEX},
-		{"%S", print_string}
+		{"%%", print_percent}, {"%i", print_int},
+		{"%d", print_decimal}, {"%b", print_binary},
+		{"%u", print_unsigned}, {"%o", print_octal},
+		{"%x", print_hex}, {"%r", print_unknown},
+		{"%X", print_HEX}
 	};
 
 	va_list args;

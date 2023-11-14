@@ -28,7 +28,7 @@ int print_octal(va_list v)
 		array[i] = temp_num % 8;
 		temp_num = temp_num / 8;
 	}
-	for (i = count - i; i >= 0; i--)
+	for (i = count - 1; i >= 0; i--)
 	{
 		_putchar(array[i] + '0');
 	}

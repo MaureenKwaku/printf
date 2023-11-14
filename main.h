@@ -33,5 +33,6 @@ int print_unsigned(va_list args);
 int print_octal(va_list v);
 int print_hex(va_list v);
 int print_HEX(va_list v);
+int print_unknown(va_list v);
 
 #endif
