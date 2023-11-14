@@ -2,16 +2,16 @@
 
 /**
  * print_hex - prints out hexadecimals
- * @v: a parameter to be checked
+ * @args: a parameter to be checked
  * Return: an integer
 **/
 
-int print_hex(va_list v)
+int print_hex(va_list args)
 {
 	int i = 0;
 	int *array;
 	int count = 0;
-	unsigned int num = va_arg(v, unsigned int);
+	unsigned int num = va_arg(args, unsigned int);
 	unsigned int temp_num = num;
 
 	while (num / 16 != 0)

@@ -50,6 +50,10 @@ int handle_conversion(char specifier, va_list args)
 		case '%': return print_percent(args);
 		case 'd': return print_decimal(args);
 		case 'i': return print_int(args);
+		case 'u': return print_unsigned(args);
+		case 'o': return print_octal(args);
+		case 'x': return print_hex(args);
+		case 'X': return print_HEX(args);
 
 		default:
 		_putchar('%');

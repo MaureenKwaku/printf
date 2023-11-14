@@ -2,16 +2,16 @@
 
 /**
  * print_octal - prints out octal convertions
- * @v: a parameter to be checked
+ * @args: a parameter to be checked
  * Return: count
 **/
 
-int print_octal(va_list v)
+int print_octal(va_list args)
 {
 	int i = 0;
 	int count = 0;
 	int *array;
-	unsigned int num = va_arg(v, unsigned int);
+	unsigned int num = va_arg(args, unsigned int);
 	unsigned int temp_num = num;
 
 	while (num / 8 != 0)

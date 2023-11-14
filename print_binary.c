@@ -2,16 +2,16 @@
 
 /**
  * print_binary - print out binary
- * @v: a parameter to be checked
+ * @args: a parameter to be checked
  * Return: 1 or 0
 **/
 
-int print_binary(va_list v)
+int print_binary(va_list args)
 {
 	int track = 0;
 	int bit_count = 0;
 	int i, a = 1, b;
-	unsigned int num = va_arg(v, unsigned int);
+	unsigned int num = va_arg(args, unsigned int);
 	unsigned int j;
 
 	for (i = 0; i < 32; i++)
