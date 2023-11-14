@@ -2,7 +2,7 @@
 
 /**
  * print_percent - prints out the percentage
- *
+ * @args: a parameter to be checked
  * Return: 1
  */
 
