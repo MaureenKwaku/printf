@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <limits.h>
+#include <string.h>
 
 /**
  * struct format - converter for printf
@@ -37,5 +38,6 @@ int print_unknown(va_list v);
 int handle_conversion(char specifier, va_list args);
 int print_pointer(va_list args);
 int print_hex_recursive(unsigned long int n);
+int print_reversed_string(va_list args);
 
 #endif
