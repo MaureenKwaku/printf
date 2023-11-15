@@ -35,5 +35,7 @@ int print_hex(va_list args);
 int print_HEX(va_list args);
 int print_unknown(va_list v);
 int handle_conversion(char specifier, va_list args);
+int print_pointer(va_list args);
+int print_hex_recursive(unsigned long int n);
 
 #endif

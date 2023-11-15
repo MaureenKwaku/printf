@@ -54,6 +54,7 @@ int handle_conversion(char specifier, va_list args)
 		case 'o': return print_octal(args);
 		case 'x': return print_hex(args);
 		case 'X': return print_HEX(args);
+		case 'p': return print_pointer(args);
 
 		default:
 		_putchar('%');
