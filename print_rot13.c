@@ -1,40 +1,32 @@
 #include "main.h"
 
 /**
- * rot13 - a function that encodes a string using rot13
+ * print_rot13 - a function that encodes a string using rot13
  * @args: input args(variadic arguments)
  *
- * Return: Length of the output string (not including null byte)
+ * Return: Number of chars printed
  */
-int rot13(va_list args)
+int print_rot13(va_list args)
 {
-	int i, j, count = 0;
-	char *s = va_arg(args, char*);
-	char data_input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char data_rotation[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *str = va_arg(args, char*);
+	int count = 0;
 
-	if (s == NULL)
+	if (str == NULL)
 		return (-1);
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (*str)
 	{
-		int rotated = 0;
-
-		for (j = 0; j < 52; j++)
+		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z'))
 		{
-			if (s[i] == data_input[j])
-			{
-				_putchar(data_rotation[j]);
-				count++;
-				rotated = 1;
-				break;
-			}
-		}
-		if (!rotated)
-		{
-			_putchar(s[i]);
+			char base = (*str >= 'a') ? 'a' : 'A';
+			_putchar(((*str - base + 13) % 26) + base);
 			count++;
 		}
+		else
+		{
+			_putchar(*str);
+			count++;
+		}
+		str++;
 	}
 	return (count);
 }
