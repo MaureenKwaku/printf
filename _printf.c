@@ -64,4 +64,3 @@ int handle_conversion(char specifier, va_list args)
 		return (2);
 	}
 }
-
