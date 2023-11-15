@@ -43,6 +43,7 @@ int _printf(const char *format, ...)
 
 int handle_conversion(char specifier, va_list args)
 {
+	int length = 0;
 	switch (specifier)
 	{
 		case 'c': return print_char(args);
@@ -57,10 +58,14 @@ int handle_conversion(char specifier, va_list args)
 		case 'p': return print_pointer(args);
 		case 'r': return print_reversed_string(args);
 		case 'R': return print_rot13(args);
+		case 'S': length += print_custom_strings(args);
+			  break;
 
 		default:
 		_putchar('%');
 		_putchar(specifier);
-		return (2);
+		length += 2;
+		break;
 	}
+	return (length);
 }
