@@ -43,8 +43,6 @@ int _printf(const char *format, ...)
 
 int handle_conversion(char specifier, va_list args)
 {
-	int length = 0;
-
 	switch (specifier)
 	{
 		case 'c': return print_char(args);
