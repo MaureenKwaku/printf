@@ -56,11 +56,11 @@ int handle_conversion(char specifier, va_list args)
 		case 'X': return print_HEX(args);
 		case 'p': return print_pointer(args);
 		case 'r': return print_reversed_string(args);
+		case 'R': return print_rot13(args);
 
 		default:
-		_putchar('%');
-		_putchar(specifier);
-		return (2);
+			_putchar('%');
+			_putchar(specifier);
+			return (2);
 	}
 }
-

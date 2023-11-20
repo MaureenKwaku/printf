@@ -39,5 +39,9 @@ int handle_conversion(char specifier, va_list args);
 int print_pointer(va_list args);
 int print_hex_recursive(unsigned long int n);
 int print_reversed_string(va_list args);
+int print_rot13(va_list args);
+int print_custom_string(va_list args);
+int print_custom_str(char *str);
+int print_hex_value(char value);
 
 #endif
