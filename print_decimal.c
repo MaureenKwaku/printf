@@ -7,7 +7,7 @@
 int print_decimal(va_list args)
 {
 	int n = va_arg(args, int), num, last = n % 10, digit;
-	int i = 1, exp = 1, has_plus = 0, has_space = 0;
+	int i = 1, exp = 1;
 
 	n = n / 10, num = n;
 	if (last < 0)
@@ -15,16 +15,6 @@ int print_decimal(va_list args)
 		_putchar('-'), num = -num;
 		n = -n;
 		last = -last;
-		i++;
-	}
-	else if (last >= 0 && has_plus)
-	{
-		_putchar('+');
-		i++;
-	}
-	else if (last >= 0 && has_space) /*for the space flag*/
-	{
-		_putchar(' ');
 		i++;
 	}
 	if (num > 0)
