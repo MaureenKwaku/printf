@@ -36,8 +36,8 @@ int _printf(const char *format, ...)
 
 /**
  * handle_conversion - handle specific conversions
- * @specifier: a parameter to be checked
- * @args: a parameter to be checked
+ * @specifier: a parameter to be checked.
+ * @args: a parameter to be checked.
  * Return: The number of characters printed for this conversion
 **/
 
