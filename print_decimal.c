@@ -1,13 +1,13 @@
 #include "main.h"
 /**
- * print_int - prints out integers
+ * print_decimal - prints out decimals
  * @args: a parameter to be checked
  * Return: an integer
 **/
-int print_int(va_list args)
+int print_decimal(va_list args)
 {
-	int n = va_arg(args, int), num, last = n % 10, digit, exp = 1;
-	int i = 1, has_plus = 0, has_space = 0;
+	int n = va_arg(args, int), num, last = n % 10, digit;
+	int i = 1, exp = 1, has_plus = 0, has_space = 0;
 
 	n = n / 10, num = n;
 	if (last < 0)
@@ -17,7 +17,7 @@ int print_int(va_list args)
 		last = -last;
 		i++;
 	}
-	else if (last >= 0 && has_plus) /* for the plus flag*/
+	else if (last >= 0 && has_plus)
 	{
 		_putchar('+');
 		i++;
