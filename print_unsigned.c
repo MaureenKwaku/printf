@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_unsigned - prints out integers
+ * print_unsigned_int - prints out integers
  * @args: a parameter to be checked
  * Return: an integer
 **/
 
-int print_unsigned(va_list args)
+int print_unsigned_int(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int);
 	int num, last = n % 10, digit, exp = 1;
