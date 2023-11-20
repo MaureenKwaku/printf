@@ -18,7 +18,7 @@ int print_rot13(va_list args)
 		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z'))
 		{
 			char base = (*str >= 'a') ? 'a' : 'A';
-			
+
 			_putchar(((*str - base + 13) % 26) + base);
 			count++;
 		}
